@@ -18,7 +18,7 @@ def index():
 		return render_template('cash.html', credit_slips=credit_slips, tips=tips, supplies=supplies, tape_total=tape_total, net_total=net_total)
 	return render_template('index.html')	
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/cash', methods=['GET', 'POST'])
 def cash():
 	if request.method == 'POST':
 		hundred = int(request.form['hundred'])

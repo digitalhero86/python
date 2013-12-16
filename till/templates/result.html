@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body>
+
+Credit Slips: {{cs}}<br>
+Tips: {{tips}}<br>
+Supplies: {{supplies}}<br>
+Tape Total: {{tape_total}}<br><br><br>
+Total Credits: {{total_credits}}<br><br><br>
+Net Total: {{net_total}}<br>
+Total amount for $100:  {{hundred_total}}<br>
+Total amount for $50:  {{fifty_total}}<br>
+Total amount for $25:  {{twenty_total}}<br>
+Total amount for $10:  {{ten_total}}<br>
+Total amount for $5:  {{five_total}}<br>
+Total amount for $1:  {{one_total}}<br>
+Total amount for $0.25:  {{quarter_total}}<br>
+Total amount for $0.10:  {{dime_total}}<br>
+Total amount for $0.05:  {{nickel_total}}<br>
+Total amount for $0.01:  {{penny_total}}<br>
+Total amount:  {{total_amount}}<br>
+       col = mongo_cash()
+        json_data = []
+        cash_results = col.find({},{'_id':0})
+        for cash_result in cash_results:
+                json_data.append(cash_result)
+        return jsonify({'output': json_data})
+Supplies : result['key2']
+</body></html>
